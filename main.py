@@ -15,6 +15,12 @@ app = Flask(__name__)
 @app.route("/api/call", methods=["POST"])
 def api_post():
     data = eval(request.data)
+    print(data)
+
+    if isinstance(data, str):
+        data = eval(data)
+        print(data)
+
     url = data.get('url', None)
     param = data.get('param', '')
     method = data.get('method', 'POST')
