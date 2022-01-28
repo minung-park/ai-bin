@@ -8,7 +8,6 @@
 
 from flask import Flask, request
 import requests
-import json
 from urllib.parse import urlencode
 app = Flask(__name__)
 
@@ -23,7 +22,6 @@ def api_post():
         return None, 400
 
     if method == 'POST':
-        param = json.loads(param)
         resp = requests.post(url, data=param)
     elif method == 'GET':
         query_string = urlencode(param)
