@@ -22,7 +22,7 @@ def api_post():
         return None, 400
 
     if method == 'POST':
-        resp = requests.post(url, data=param)
+        resp = requests.post(url, json=param)
     elif method == 'GET':
         query_string = urlencode(param)
         resp = requests.get(f'{url}?{query_string}')
