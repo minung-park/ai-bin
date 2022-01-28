@@ -12,7 +12,7 @@ from urllib.parse import urlencode
 app = Flask(__name__)
 
 
-@app.route("/api/post/call", methods=["POST"])
+@app.route("/api/call", methods=["POST"])
 def api_post():
     # 아래와 같은 형태로 api 호출
     # {
